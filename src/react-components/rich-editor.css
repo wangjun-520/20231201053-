@@ -1,0 +1,113 @@
+.rich-editor {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-medium);
+  overflow: hidden;
+  background: var(--background-primary);
+}
+
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.toolbar-btn {
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+}
+
+.toolbar-btn:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.toolbar-btn:active {
+  transform: scale(0.95);
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-color);
+  margin: 0 4px;
+}
+
+.editor-content {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 300px;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--background-primary);
+}
+
+.editor-content::placeholder {
+  color: var(--text-secondary);
+}
+
+.editor-footer {
+  padding: 8px 16px;
+  background: var(--background-secondary);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.char-count {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .editor-toolbar {
+    padding: 8px 12px;
+    gap: 6px;
+  }
+  
+  .toolbar-btn {
+    padding: 4px 8px;
+    min-width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .editor-content {
+    padding: 12px;
+    font-size: 14px;
+    min-height: 250px;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .toolbar-btn:hover {
+    background: none;
+    color: inherit;
+  }
+  
+  .toolbar-btn:active {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(0.95);
+  }
+}
